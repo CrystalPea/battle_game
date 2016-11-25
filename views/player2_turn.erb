@@ -13,7 +13,6 @@ html {
 #right {
 	float: right;
 	width: 50%;
-
 }
 </style>
 </head>
@@ -22,21 +21,22 @@ html {
   <h1> <%= @game.player1.name %> vs. <%= @game.player2.name %>! Fight!!! </h1>
   <h2> <%= @game.player2.name%>'s turn!</h2>
   <div id="left">
-  <p> <h2> <%= @game.player1.name %>: <%= @game.player1.hp %> HP</h2>
+    <img width="300" src="http://media.tumblr.com/79711e3c70a21d81a9c8a7ef24559f9e/tumblr_inline_mkduxkxwjE1qz4rgp.png">
+    <p> <h2> <%= @game.player1.name %>: <%= @game.player1.hp %> HP</h2>
+      <h4>
+       <form action="/player2_attack">
+         <label for='attack_damage'>
+           <p>Enter the Damage you want to inflict
+           <p>The higher the damage the lower the accuracy
+           <p>The highest damage with 100% success is 10.
+         </label>
+         <input type="text" name="attack_damage"/>
+         <input type="submit" value="Attack"/>
+       </form>
+      </h4>
   </div>
   <div id="right">
-  <h2><%= @game.player2.name %>: <%= @game.player2.hp %> HP</h2>
+    <img width="300" src="http://vignette2.wikia.nocookie.net/star-and-the-forces-of-evil/images/b/b4/S1E3_Star_firing_crystal_heart_daggers.png">
+    <h2><%= @game.player2.name %>: <%= @game.player2.hp %> HP</h2>
   </div>
-</h2>
-  <h4>
-   <form action="/player2_attack">
-     <label for='attack_damage'>
-       <p>Enter the Damage you want to inflict
-       <p>The higher the damage the lower the accuracy
-       <p>The highest damage with 100% success is 10.
-     </label>
-     <input type="text" name="attack_damage"/>
-     <input type="submit" value="Attack"/>
-   </form>
-  </h4>
 </body>
